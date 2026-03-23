@@ -1,6 +1,9 @@
 {
   "name": "my-personal-marketplace",
-  "owner": "my-personal-marketplace",
+  "owner": {
+    "name": "Inicions",
+    "email": "jtelio118+ia@gmail.com"
+  },
   "metadata": {
     "description": "Personal marketplace for portable skills and plugins compatible with GitHub Copilot and Claude Code.",
     "version": "1.0.0"
