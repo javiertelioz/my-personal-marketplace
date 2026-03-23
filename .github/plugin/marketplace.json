@@ -1,0 +1,16 @@
+{
+  "name": "my-personal-marketplace",
+  "owner": "my-personal-marketplace",
+  "metadata": {
+    "description": "Personal marketplace for portable skills and plugins compatible with GitHub Copilot and Claude Code.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "marketplace-curator",
+      "description": "Scaffolds and manages portable plugins for this marketplace.",
+      "version": "1.0.0",
+      "source": "./plugins/marketplace-curator"
+    }
+  ]
+}

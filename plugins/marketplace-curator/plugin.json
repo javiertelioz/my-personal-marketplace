@@ -1,0 +1,12 @@
+{
+  "name": "marketplace-curator",
+  "version": "1.0.0",
+  "description": "Scaffolds and manages portable plugins for this marketplace.",
+  "skills": [
+    {
+      "name": "scaffold-plugin",
+      "description": "Generates a minimal portable plugin skeleton ready for this marketplace.",
+      "entrypoint": "./skills/scaffold-plugin/SKILL.md"
+    }
+  ]
+}
