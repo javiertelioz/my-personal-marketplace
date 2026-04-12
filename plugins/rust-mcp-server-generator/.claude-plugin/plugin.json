@@ -1,0 +1,19 @@
+{
+  "name": "rust-mcp-server-generator",
+  "version": "1.0.0",
+  "description": "Rust MCP development toolkit with generator and expert guidance.",
+  "agents": [
+    {
+      "name": "rust-mcp-expert",
+      "description": "Expert guidance for building Rust MCP servers with rmcp.",
+      "entrypoint": "./agents/rust-mcp-expert.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "rust-mcp-server-generator",
+      "description": "Generates complete Rust MCP server projects with tools and tests.",
+      "entrypoint": "./skills/rust-mcp-server-generator/SKILL.md"
+    }
+  ]
+}

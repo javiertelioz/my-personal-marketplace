@@ -1,0 +1,52 @@
+{
+  "name": "project-management",
+  "version": "1.0.0",
+  "description": "Project management toolkit for Jira, Confluence, Scrum, and PM workflows.",
+  "skills": [
+    {
+      "name": "pm-skills",
+      "description": "Overview skill for the full project management toolkit.",
+      "entrypoint": "./skills/pm-skills/SKILL.md"
+    },
+    {
+      "name": "senior-pm",
+      "description": "Portfolio planning, risk analysis, and executive PM guidance.",
+      "entrypoint": "./skills/senior-pm/SKILL.md"
+    },
+    {
+      "name": "scrum-master",
+      "description": "Sprint health, velocity, retrospectives, and agile facilitation.",
+      "entrypoint": "./skills/scrum-master/SKILL.md"
+    },
+    {
+      "name": "jira-expert",
+      "description": "Jira workflows, JQL, automation, and project configuration.",
+      "entrypoint": "./skills/jira-expert/SKILL.md"
+    },
+    {
+      "name": "confluence-expert",
+      "description": "Confluence spaces, page design, and knowledge management.",
+      "entrypoint": "./skills/confluence-expert/SKILL.md"
+    },
+    {
+      "name": "atlassian-admin",
+      "description": "Atlassian administration, permissions, and governance tasks.",
+      "entrypoint": "./skills/atlassian-admin/SKILL.md"
+    },
+    {
+      "name": "atlassian-templates",
+      "description": "Reusable Atlassian templates, blueprints, and content patterns.",
+      "entrypoint": "./skills/atlassian-templates/SKILL.md"
+    },
+    {
+      "name": "meeting-analyzer",
+      "description": "Analyzes meetings for decisions, actions, and process insights.",
+      "entrypoint": "./skills/meeting-analyzer/SKILL.md"
+    },
+    {
+      "name": "team-communications",
+      "description": "Creates project and team communications for internal stakeholders.",
+      "entrypoint": "./skills/team-communications/SKILL.md"
+    }
+  ]
+}

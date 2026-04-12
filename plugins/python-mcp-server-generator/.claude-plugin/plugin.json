@@ -1,0 +1,19 @@
+{
+  "name": "python-mcp-server-generator",
+  "version": "1.0.0",
+  "description": "Python MCP development toolkit with generator and expert guidance.",
+  "agents": [
+    {
+      "name": "python-mcp-expert",
+      "description": "Expert guidance for building Python MCP servers with FastMCP.",
+      "entrypoint": "./agents/python-mcp-expert.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "python-mcp-server-generator",
+      "description": "Generates complete Python MCP server projects with tools and validation.",
+      "entrypoint": "./skills/python-mcp-server-generator/SKILL.md"
+    }
+  ]
+}

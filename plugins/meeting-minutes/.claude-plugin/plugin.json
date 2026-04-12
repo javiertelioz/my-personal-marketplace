@@ -1,0 +1,12 @@
+{
+  "name": "meeting-minutes",
+  "version": "1.0.0",
+  "description": "Generates concise internal meeting minutes with actions and decisions.",
+  "skills": [
+    {
+      "name": "meeting-minutes",
+      "description": "Creates structured meeting minutes with owners, due dates, and follow-up.",
+      "entrypoint": "./skills/meeting-minutes/SKILL.md"
+    }
+  ]
+}

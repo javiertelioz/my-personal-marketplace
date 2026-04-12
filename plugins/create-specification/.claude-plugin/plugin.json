@@ -1,0 +1,12 @@
+{
+  "name": "create-specification",
+  "version": "1.0.0",
+  "description": "Creates AI-ready specification documents with structured requirements.",
+  "skills": [
+    {
+      "name": "create-specification",
+      "description": "Creates machine-readable specification files for solution design.",
+      "entrypoint": "./skills/create-specification/SKILL.md"
+    }
+  ]
+}

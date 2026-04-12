@@ -1,0 +1,12 @@
+{
+  "name": "datadog-notebooks",
+  "version": "1.0.0",
+  "description": "Designs Datadog notebook runbooks from app context, codebase signals, and metrics.",
+  "skills": [
+    {
+      "name": "datadog-notebooks",
+      "description": "Generates Datadog notebook markdown runbooks for service troubleshooting.",
+      "entrypoint": "./skills/datadog-notebooks/SKILL.md"
+    }
+  ]
+}

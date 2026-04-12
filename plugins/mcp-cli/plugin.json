@@ -1,0 +1,12 @@
+{
+  "name": "mcp-cli",
+  "version": "1.0.0",
+  "description": "Exposes MCP servers and tools through a command-line workflow.",
+  "skills": [
+    {
+      "name": "mcp-cli",
+      "description": "Discovers and calls MCP servers and tools from the CLI.",
+      "entrypoint": "./skills/mcp-cli/SKILL.md"
+    }
+  ]
+}

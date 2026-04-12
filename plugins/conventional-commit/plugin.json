@@ -1,0 +1,12 @@
+{
+  "name": "conventional-commit",
+  "version": "1.0.0",
+  "description": "Guides structured Conventional Commits message creation for git changes.",
+  "skills": [
+    {
+      "name": "conventional-commit",
+      "description": "Generates Conventional Commits messages from repository changes.",
+      "entrypoint": "./skills/conventional-commit/SKILL.md"
+    }
+  ]
+}

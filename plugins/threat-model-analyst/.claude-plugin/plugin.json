@@ -1,0 +1,12 @@
+{
+  "name": "threat-model-analyst",
+  "version": "1.0.0",
+  "description": "Runs STRIDE-A threat model analyses and incremental security updates.",
+  "skills": [
+    {
+      "name": "threat-model-analyst",
+      "description": "Performs full or incremental STRIDE-A threat model analysis.",
+      "entrypoint": "./skills/threat-model-analyst/SKILL.md"
+    }
+  ]
+}

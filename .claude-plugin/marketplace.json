@@ -11,6 +11,84 @@
       "description": "Scaffolds and manages portable plugins for this marketplace.",
       "version": "1.0.0",
       "source": "./plugins/marketplace-curator"
+    },
+    {
+      "name": "threat-model-analyst",
+      "description": "Runs STRIDE-A threat model analyses and incremental security updates.",
+      "version": "1.0.0",
+      "source": "./plugins/threat-model-analyst"
+    },
+    {
+      "name": "rust-mcp-server-generator",
+      "description": "Rust MCP development toolkit with generator and expert guidance.",
+      "version": "1.0.0",
+      "source": "./plugins/rust-mcp-server-generator"
+    },
+    {
+      "name": "prd",
+      "description": "Generates structured product requirements documents for software features.",
+      "version": "1.0.0",
+      "source": "./plugins/prd"
+    },
+    {
+      "name": "mcp-cli",
+      "description": "Exposes MCP servers and tools through a command-line workflow.",
+      "version": "1.0.0",
+      "source": "./plugins/mcp-cli"
+    },
+    {
+      "name": "go-mcp-server-generator",
+      "description": "Go MCP development toolkit with generator and expert guidance.",
+      "version": "1.0.0",
+      "source": "./plugins/go-mcp-server-generator"
+    },
+    {
+      "name": "create-specification",
+      "description": "Creates AI-ready specification documents with structured requirements.",
+      "version": "1.0.0",
+      "source": "./plugins/create-specification"
+    },
+    {
+      "name": "create-agentsmd",
+      "description": "Generates repository AGENTS.md files for coding agent workflows.",
+      "version": "1.0.0",
+      "source": "./plugins/create-agentsmd"
+    },
+    {
+      "name": "conventional-commit",
+      "description": "Guides structured Conventional Commits message creation for git changes.",
+      "version": "1.0.0",
+      "source": "./plugins/conventional-commit"
+    },
+    {
+      "name": "meeting-minutes",
+      "description": "Generates concise internal meeting minutes with actions and decisions.",
+      "version": "1.0.0",
+      "source": "./plugins/meeting-minutes"
+    },
+    {
+      "name": "python-mcp-server-generator",
+      "description": "Python MCP development toolkit with generator and expert guidance.",
+      "version": "1.0.0",
+      "source": "./plugins/python-mcp-server-generator"
+    },
+    {
+      "name": "typescript-mcp-server-generator",
+      "description": "TypeScript MCP development toolkit with generator and expert guidance.",
+      "version": "1.0.0",
+      "source": "./plugins/typescript-mcp-server-generator"
+    },
+    {
+      "name": "project-management",
+      "description": "Project management toolkit for Jira, Confluence, Scrum, and PM workflows.",
+      "version": "1.0.0",
+      "source": "./plugins/project-management"
+    },
+    {
+      "name": "datadog-notebooks",
+      "description": "Designs Datadog notebook runbooks from app context, codebase signals, and metrics.",
+      "version": "1.0.0",
+      "source": "./plugins/datadog-notebooks"
     }
   ]
 }

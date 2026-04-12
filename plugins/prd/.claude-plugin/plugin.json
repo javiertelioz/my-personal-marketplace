@@ -1,0 +1,12 @@
+{
+  "name": "prd",
+  "version": "1.0.0",
+  "description": "Generates structured product requirements documents for software features.",
+  "skills": [
+    {
+      "name": "prd",
+      "description": "Generates high-quality PRDs with discovery, scope, and risks.",
+      "entrypoint": "./skills/prd/SKILL.md"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "create-agentsmd",
+  "version": "1.0.0",
+  "description": "Generates repository AGENTS.md files for coding agent workflows.",
+  "skills": [
+    {
+      "name": "create-agentsmd",
+      "description": "Creates complete AGENTS.md files tailored to a repository.",
+      "entrypoint": "./skills/create-agentsmd/SKILL.md"
+    }
+  ]
+}

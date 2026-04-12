@@ -1,0 +1,19 @@
+{
+  "name": "go-mcp-server-generator",
+  "version": "1.0.0",
+  "description": "Go MCP development toolkit with generator and expert guidance.",
+  "agents": [
+    {
+      "name": "go-mcp-expert",
+      "description": "Expert guidance for building Go MCP servers with the official SDK.",
+      "entrypoint": "./agents/go-mcp-expert.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "go-mcp-server-generator",
+      "description": "Generates complete Go MCP server projects with tools and tests.",
+      "entrypoint": "./skills/go-mcp-server-generator/SKILL.md"
+    }
+  ]
+}

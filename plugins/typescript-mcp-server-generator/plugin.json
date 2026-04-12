@@ -1,0 +1,19 @@
+{
+  "name": "typescript-mcp-server-generator",
+  "version": "1.0.0",
+  "description": "TypeScript MCP development toolkit with generator and expert guidance.",
+  "agents": [
+    {
+      "name": "typescript-mcp-expert",
+      "description": "Expert guidance for building TypeScript MCP servers with the SDK.",
+      "entrypoint": "./agents/typescript-mcp-expert.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "typescript-mcp-server-generator",
+      "description": "Generates complete TypeScript MCP server projects with tools and validation.",
+      "entrypoint": "./skills/typescript-mcp-server-generator/SKILL.md"
+    }
+  ]
+}
