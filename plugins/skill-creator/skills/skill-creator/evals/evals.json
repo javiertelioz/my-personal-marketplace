@@ -1,0 +1,24 @@
+{
+  "skill_name": "skill-creator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a new skill for writing incident response runbooks, including references, a template, and starter evals.",
+      "expected_output": "A complete Agent Skills-compatible skill package with a focused SKILL.md, intuitive references, and eval scaffolding.",
+      "assertions": [
+        "The output includes a valid skill directory structure.",
+        "The output includes a SKILL.md file with frontmatter.",
+        "The output includes references routed by task."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Restructure my existing skill so the main instructions stay short and the details move into references and scripts where appropriate.",
+      "expected_output": "A refactored skill with progressive disclosure and a clearer separation between orchestration, references, and scripts.",
+      "assertions": [
+        "The output keeps SKILL.md focused on workflow and activation.",
+        "The output moves heavy detail into references or assets."
+      ]
+    }
+  ]
+}

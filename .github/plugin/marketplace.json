@@ -92,6 +92,12 @@
       "description": "Designs Datadog notebook runbooks from app context, codebase signals, and metrics.",
       "version": "1.0.0",
       "source": "./plugins/datadog-notebooks"
+    },
+    {
+      "name": "skill-creator",
+      "description": "Creates spec-compliant agent skills with validation and eval scaffolding.",
+      "version": "1.0.0",
+      "source": "./plugins/skill-creator"
     }
   ]
 }

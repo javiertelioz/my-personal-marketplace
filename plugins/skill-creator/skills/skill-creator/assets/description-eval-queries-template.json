@@ -1,0 +1,10 @@
+[
+  {
+    "query": "Replace this with a realistic prompt that should trigger the skill.",
+    "should_trigger": true
+  },
+  {
+    "query": "Replace this with a realistic prompt that should not trigger the skill.",
+    "should_trigger": false
+  }
+]

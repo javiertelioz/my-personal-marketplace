@@ -1,0 +1,13 @@
+{
+  "skill_name": "my-skill",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Replace this with a realistic prompt the skill should handle well.",
+      "expected_output": "Describe what success looks like in human-readable terms.",
+      "assertions": [
+        "Replace this with a concrete assertion."
+      ]
+    }
+  ]
+}

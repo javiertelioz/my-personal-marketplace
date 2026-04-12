@@ -1,0 +1,26 @@
+[
+  {
+    "query": "Can you create a reusable skill package for reviewing Terraform security patterns?",
+    "should_trigger": true
+  },
+  {
+    "query": "Help me improve this skill description so it activates more reliably.",
+    "should_trigger": true
+  },
+  {
+    "query": "Scaffold eval files for this new skill and show me how to validate it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Write a README for my plugin.",
+    "should_trigger": false
+  },
+  {
+    "query": "Build a Python SDK for our internal API.",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you summarize this meeting transcript?",
+    "should_trigger": false
+  }
+]

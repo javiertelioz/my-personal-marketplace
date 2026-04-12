@@ -5,294 +5,126 @@ description: Design Datadog notebook runbooks as Markdown for service troublesho
 
 # Datadog Notebook Runbooks
 
-Design **Datadog notebook runbooks** that improve how responders investigate, mitigate, and validate issues in a service.
+Create **Datadog notebook runbooks in Markdown** for operational troubleshooting, incident response, and recurring service issues.
 
-This skill does **not** assume direct access to Datadog. Instead, it builds the notebook from:
+This skill is for authoring the **Markdown source** of a Datadog notebook runbook. It is optimized for responders who need a practical document with:
 
-- user-provided service context
-- known alerts and metrics
-- codebase scanning for runtime and dependency clues
-- recurring failure modes and remediation steps
+- clear trigger conditions
+- the fastest useful triage steps
+- metrics, logs, traces, and events to inspect
+- safe mitigation options
+- explicit escalation criteria
+- follow-up and ownership
 
-The final output is **Markdown for the runbook notebook**, ready to be reviewed or later imported into the user’s Datadog notebook workflow.
+## What this skill does
 
-## Core objective
+- designs runbooks for recurring incident patterns such as high error rate, latency spikes, provider timeouts, and queue lag
+- asks for the minimum context needed to make the runbook operational
+- scans the codebase when available to infer service boundaries, dependencies, and likely failure domains
+- produces the **actual notebook Markdown**
+- uses reusable placeholders when real telemetry names are not confirmed
+- keeps the output aligned with Datadog notebook authoring patterns
 
-Produce a notebook that helps engineers answer, in order:
+## What this skill does not do
 
-1. **Is this the right runbook?**
-2. **What should I check first?**
-3. **What telemetry confirms the problem?**
-4. **What dependencies might be involved?**
-5. **What actions are safe to try?**
-6. **How do I know the service recovered?**
-7. **When do I escalate?**
+- it does **not** assume live access to Datadog
+- it does **not** invent confirmed metric names, monitor IDs, dashboards, or log fields
+- it does **not** treat the runbook like a static wiki page
+- it does **not** generate bloated incident flows when a short triage path is enough
 
-## Important constraints
+## Bundled references
 
-- Do **not** assume live Datadog access
-- Do **not** invent real metric names, monitors, dashboards, or log fields unless clearly marked as placeholders
-- You **may** scan the project to infer:
-  - service boundaries
-  - entrypoints
-  - dependencies
-  - background jobs
-  - queues
-  - databases
-  - caches
-  - external APIs
-  - health checks
-  - likely failure domains
-- If critical telemetry details are missing, ask for them instead of guessing
+Use these references while writing the runbook:
+
+- `references/notebooks-reference.md`
+- `references/metrics-reference.md`
+- `references/sre-runbook-guidance.md`
+- `references/notebook-markdown-format.md`
+- `references/notebook-markdown-rules.md`
+- `references/notebook-markdown-example.md`
+- `templates/runbook-template.md`
+
+Use them as follows:
+
+- use the **format** reference for special fenced blocks, frontmatter, links, and annotations
+- use the **rules** reference for validation, time values, and warning conditions
+- use the **example** reference for end-to-end notebook structure
+- use the **metrics** reference for safe placeholder strategy and tag guidance
+- use the **SRE guidance** reference to avoid operational anti-patterns
+- use the **template** when the user wants a reusable runbook skeleton
 
 ## Required discovery
 
-Before generating the notebook, collect enough context to make the runbook operational.
+Before drafting the notebook, gather enough context to make it actionable:
 
-Ask about:
-
-1. **Service and business function**
-   - What service is this for?
-   - What user journey or business capability does it support?
-2. **Common problem pattern**
-   - What issue is this runbook meant to solve?
-   - Examples: latency spike, elevated 5xx, queue backlog, timeouts, deploy regression, dependency outage
+1. **Service**
+   - What service or system is this for?
+   - What business capability does it support?
+2. **Incident pattern**
+   - What problem should the runbook solve?
+   - Examples: high error rate, provider timeout, latency spike, queue lag
 3. **Signals**
-   - Which metrics, logs, traces, or events do responders already use?
-   - Which alerts or SLO symptoms trigger this runbook?
-4. **Environment and scope**
-   - prod only, all envs, region-specific, cluster-specific, tenant-specific
+   - Which metrics, logs, traces, or events are already used?
+   - Which alert or symptom should lead responders to this runbook?
+4. **Scope**
+   - production only, all envs, specific region, cluster, or tenant
 5. **Mitigation authority**
-   - What actions are allowed? restart, rollback, scale up, fail over, feature flag toggle, drain queue, clear cache
+   - What actions are allowed: restart, rollback, scale, fail over, feature flag change, queue drain, cache clear
 6. **Escalation**
-   - Who owns the service and who must be paged if mitigation fails?
+   - Who owns the system and when must the responder escalate?
+7. **Monitor linkage**
+   - Which monitors should point to this runbook?
+8. **Governance**
+   - Who owns the runbook?
+   - When was it last reviewed?
 
-If a repository is available, scan it to enrich the notebook with architectural context.
+If a repository is available, inspect it to infer:
 
-## Codebase scanning goals
+- entrypoints and handlers
+- workers and scheduled jobs
+- queues, databases, caches, and external APIs
+- health checks and diagnostics
+- logging patterns, retries, circuit breakers, and timeouts
 
-When code is available, inspect the project to infer:
+## Authoring approach
 
-- application entrypoints and handlers
-- scheduled jobs and workers
-- database and cache usage
-- downstream services and third-party integrations
-- message queues and async pipelines
-- feature flags and config surfaces
-- health endpoints, readiness, liveness, and diagnostics
-- logging conventions and error markers
-- retry logic, circuit breakers, and timeout behavior
+When generating the notebook:
 
-Use this to improve the runbook structure, but keep inferred details labeled as inferred if not confirmed by the user.
+1. Start with a **specific title** and narrow scope.
+2. Keep the first triage pass short enough for a responder to traverse quickly.
+3. Put the highest-value telemetry first.
+4. Organize investigation steps by hypotheses when useful.
+5. Include mitigation with validation after each action.
+6. Add explicit escalation criteria.
+7. Keep ownership, review date, and related monitors visible near the top.
+8. Mark assumptions and unresolved telemetry as TODOs.
 
-## Recommended notebook structure
-
-Default to this structure unless the user asks for something different:
-
-### 1. Title
-
-Make it operational and specific.
-
-Examples:
-
-- `Checkout API - Elevated 5xx Runbook`
-- `Payments Worker - Queue Backlog Investigation`
-- `Auth Service - Latency Spike Triage`
-
-### 2. Purpose and scope
-
-- what this runbook covers
-- when it should be used
-- when it should not be used
-
-### 3. Service context
-
-- service summary
-- critical dependencies
-- blast radius
-- owner team
-
-### 4. Entry conditions
-
-- alert names or symptoms
-- thresholds or patterns
-- prerequisite context to gather before acting
-
-### 5. Template variables
-
-Prefer reusable placeholders such as:
-
-- `$env`
-- `$service`
-- `$region`
-- `$cluster`
-- `$team`
-- `$dependency`
-
-### 6. Triage views
-
-Start with a small set of high-value telemetry:
-
-- availability / error rate
-- latency
-- traffic / throughput
-- saturation or backlog
-- deploy or incident markers
-
-### 7. Investigation flow
-
-Organize by hypotheses:
-
-- recent deploy regression
-- dependency degradation
-- database pressure
-- cache failure
-- queue congestion
-- resource exhaustion
-- bad config or feature flag
-
-### 8. Mitigation options
-
-For each mitigation:
-
-- when to try it
-- risk level
-- exact validation after applying it
-
-### 9. Validation
-
-- what healthy looks like
-- which signals must return to normal
-- how long to observe
-
-### 10. Escalation
-
-- when to escalate
-- to whom
-- what evidence to include
-
-### 11. Follow-up
-
-- known gaps
-- permanent fix ideas
-- post-incident notes
-
-## Markdown output format
-
-Generate **Markdown**, not prose about Markdown.
-
-The notebook content can mix:
-
-- regular Markdown narrative and checklists
-- notebook-oriented query blocks for logs, metrics, and events
-
-### Prose sections
-
-Use regular Markdown for:
-
-- instructions
-- checklists
-- warnings
-- rollback steps
-- validation criteria
-- escalation rules
-
-### Log query block
-
-Use this when you know or can safely propose a log stream query shape:
-
-````markdown
-```log-query
-{
-  "query": "service:$service env:$env status:error",
-  "indexes": ["main"],
-  "columns": ["service", "host", "@http.status_code", "@error.message"],
-  "time": "4h"
-}
-```
-````
-
-### Metric query block
-
-Use this for graphs the operator should look at first:
-
-````markdown
-```metric-query
-{
-  "query": "avg:service.request.latency{service:$service,env:$env}",
-  "title": "Request Latency",
-  "display_type": "line",
-  "time": "4h",
-  "events": [{"q": "source:deploy service:$service env:$env"}]
-}
-```
-````
-
-Use `queries` when multiple related signals belong in one graph.
-
-### Event query block
-
-Use this for deploy markers, incidents, or event-derived signals:
-
-````markdown
-```event-query
-{
-  "data_source": "events",
-  "search": "source:deploy service:$service env:$env",
-  "compute": "count",
-  "title": "Deploy Events"
-}
-```
-````
-
-## Notebook UX guidance from Datadog
-
-Design the notebook so it works well inside Datadog:
-
-- use headings so the notebook gets a table of contents
-- use concise sections instead of long paragraphs
-- use numbered steps for procedures
-- use checklists for mitigation and validation
-- use tables for owners, thresholds, and escalation paths
-- prefer a shared global time window for investigation coherence
-- use template variables to avoid cloning notebooks per service or env
-- structure the notebook so version history remains meaningful over time
-- favor runbook-type notebooks with team tagging and service ownership clearly visible
-
-## Output rules
-
-When creating the notebook:
-
-- generate the **actual notebook markdown**
-- include placeholders only when necessary
-- mark assumptions explicitly
-- clearly separate:
-  - confirmed facts
-  - inferred architecture context
-  - placeholder telemetry that needs user confirmation
-
-If information is incomplete, still produce a useful draft, but annotate missing items with:
-
-- `TODO: confirm metric name`
-- `TODO: confirm monitor threshold`
-- `TODO: confirm owner/escalation`
-
-## Preferred response shape
+## Output requirements
 
 Return:
 
-1. Proposed notebook title
-2. Short summary of what the runbook is for
-3. The notebook markdown
-4. A short list of unresolved telemetry placeholders, if any
+1. proposed notebook title
+2. short summary of the runbook purpose
+3. the full notebook Markdown
+4. unresolved placeholders that still need confirmation
 
-## Anti-patterns
+## Output rules
 
-Avoid notebooks that are:
+- generate the **actual Markdown**, not commentary about Markdown
+- prefer reusable placeholders such as `$service`, `$env`, `$region`, `$cluster`, and `$dependency`
+- clearly distinguish confirmed facts from inferred context
+- use `TODO:` markers for unconfirmed telemetry details
+- follow the special Markdown block rules in `references/notebook-markdown-format.md`
+- enforce the validation constraints in `references/notebook-markdown-rules.md`
 
-- generic and non-actionable
-- only descriptive, with no investigation flow
-- tied to one hardcoded env when reuse is expected
-- missing validation after mitigation
-- missing escalation criteria
-- overloaded with low-value graphs before the primary signals
+## Operational quality bar
+
+The runbook should help responders answer:
+
+1. Is this the right runbook?
+2. What should I check first?
+3. Which signals confirm the issue?
+4. What dependencies are likely involved?
+5. What actions are safe to try?
+6. How do I confirm recovery?
+7. When do I escalate?

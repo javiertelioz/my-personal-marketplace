@@ -1,0 +1,12 @@
+{
+  "name": "skill-creator",
+  "version": "1.0.0",
+  "description": "Creates spec-compliant agent skills with validation and eval scaffolding.",
+  "skills": [
+    {
+      "name": "skill-creator",
+      "description": "Creates Agent Skills-compatible skills with structured references, scripts, and eval workflows.",
+      "entrypoint": "./skills/skill-creator/SKILL.md"
+    }
+  ]
+}
